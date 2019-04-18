@@ -1,0 +1,74 @@
+.formSearch {
+  background-color: white;
+  height: 40px;
+  width: 320px;
+  display: flex;
+  align-items: center;
+  line-height: 26px;
+  margin: auto 0;
+  border: 1px solid #e6e6e6;
+}
+
+.formSearch > i {
+  margin-left: 10px;
+  font-size: 22px;
+}
+
+.InputSearch {
+  text-align: right;
+  width: 300px;
+  border: 0;
+  outline: 0;
+  margin: 10px;
+  font-size: 14px;
+}
+
+::-webkit-input-placeholder {
+  text-align: right;
+}
+::-moz-placeholder {
+  color: pink;
+}
+:-ms-input-placeholder {
+  color: pink;
+}
+:-moz-placeholder {
+  text-align: right;
+}
+
+.imageLogo {
+  width: 50px;
+}
+
+.headerTop {
+  text-align: center;
+  list-style: none;
+  background-color: white;
+  display: flex;
+
+  -webkit-flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  line-height: 40px;
+  font-size: 15px;
+  padding: 25px 0 25px 0px;
+}
+
+.logoMeno {
+  margin-right: 150px;
+}
+.regesteri {
+  display: inline-flex;
+}
+.regesteri > li {
+  margin-left: 20px;
+}
+
+.span-left {
+  margin-left: 3px;
+}
+
+.span-right {
+  margin-right: 6px;
+}
