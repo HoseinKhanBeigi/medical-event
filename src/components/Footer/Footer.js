@@ -11,20 +11,19 @@ export default class Footer extends PureComponent<State, Props> {
   state = { height: 0 };
 
   componentDidMount() {
-    const heightWindow = window.innerHeight;
-    const navbar = document.querySelector(".navbar").getBoundingClientRect()
-      .height;
-    this.setState({
-      height: navbar
-    });
-
-    window.addEventListener("resize", () => {
-      const navbar = document.querySelector(".navbar").getBoundingClientRect()
-        .height;
-      this.setState({
-        height: navbar
-      });
-    });
+    // const heightWindow = window.innerHeight;
+    // const navbar = document.querySelector(".navbar").getBoundingClientRect()
+    //   .height;
+    // this.setState({
+    //   height: navbar
+    // });
+    // window.addEventListener("resize", () => {
+    //   const navbar = document.querySelector(".navbar").getBoundingClientRect()
+    //     .height;
+    //   this.setState({
+    //     height: navbar
+    //   });
+    // });
   }
 
   render() {

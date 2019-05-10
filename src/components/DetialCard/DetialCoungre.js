@@ -19,9 +19,14 @@ class DetialCoungre extends PureComponent<State, Props> {
     });
   }
 
-  handleClick = () => {
+  handleClickSummery = () => {
     const { history } = this.props;
-    history.push(`/${12}/summery`);
+    history.push(`${12}/summery`);
+  };
+
+  handleClickMap = () => {
+    const { history } = this.props;
+    history.push(`${12}/map`);
   };
 
   render() {
@@ -47,7 +52,13 @@ class DetialCoungre extends PureComponent<State, Props> {
               alignItems: "center"
             }}
           >
-            <button onClick={() => this.handleClick()}>{"ایاب و ذهاب"}</button>
+            <div
+              style={{ marginRight: "10px" }}
+              className="card-content"
+              onClick={() => this.handleClickMap()}
+            >
+              {"ایاب و ذهاب"}
+            </div>
 
             <Icon type="smile" style={{ marginRight: "12px" }} />
           </div>
@@ -63,7 +74,13 @@ class DetialCoungre extends PureComponent<State, Props> {
               alignItems: "center"
             }}
           >
-            <button>{"ایاب و ذهاب"}</button>
+            <div
+              style={{ marginRight: "10px" }}
+              className="card-content"
+              onClick={() => this.handleClickSummery()}
+            >
+              {"خلاصه"}
+            </div>
             <Icon type="smile" style={{ marginRight: "12px" }} />
           </div>
         </div>

@@ -41,41 +41,44 @@ class HeaderCoungre extends PureComponent<State, Props> {
         style={{
           background: "#844aeccf",
           width: "100%",
+          display: "flex",
           direction: "rtl"
         }}
       >
-        <button
-          style={{ marginTop: "34px", fontSize: "17px" }}
-          onClick={() => this.handleClick()}
-        >
-          <Icon
-            type="arrow-right"
-            style={{ marginRight: "12px", color: "white" }}
-          />
-        </button>
-        <div
-          style={{
-            marginTop: "34px",
-            fontSize: "27px",
-            color: "white",
-            marginRight: "12px"
-          }}
-          className="card-content"
-        >
-          {" به شرایط فعلی رانش قاره‌ای،"}
+        <div>
+          <div
+            style={{ fontSize: "17px", marginTop: "12px" }}
+            onClick={() => this.handleClick()}
+          >
+            <Icon
+              type="arrow-right"
+              style={{ marginRight: "12px", color: "white" }}
+            />
+          </div>
+          <div
+            style={{
+              marginTop: "34px",
+              fontSize: "27px",
+              color: "white",
+              marginRight: "12px"
+            }}
+            className="card-content"
+          >
+            {" به شرایط فعلی رانش قاره‌ای،"}
+          </div>
+          <div
+            style={{
+              marginTop: "34px",
+              fontSize: "17px",
+              color: "#49d8cd",
+              marginRight: "12px"
+            }}
+            className="card-content"
+          >
+            {"کنکره فعلی"}
+          </div>
+          <div style={{ height: "12px" }} />
         </div>
-        <div
-          style={{
-            marginTop: "34px",
-            fontSize: "17px",
-            color: "#49d8cd",
-            marginRight: "12px"
-          }}
-          className="card-content"
-        >
-          {"کنکره فعلی"}
-        </div>
-        <div style={{ height: "12px" }} />
       </div>
     );
   }

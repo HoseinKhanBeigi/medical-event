@@ -3,7 +3,8 @@ import {
   News,
   Congress,
   DetialCoungre,
-  SummenryImformation
+  SummenryImformation,
+  Profile
 } from "./components";
 
 export default [
@@ -22,8 +23,8 @@ export default [
       },
       {
         path: "/profile",
-        exact: true
-        // component: Medical
+        exact: true,
+        component: Profile
       },
       {
         path: "/congress",
@@ -39,8 +40,12 @@ export default [
       {
         path: "/congress/:id/summery",
         exact: true,
-        component: SummenryImformation,
-        isExact: true
+        component: SummenryImformation
+      },
+      {
+        path: "/congress/:id/map",
+        exact: true,
+        component: SummenryImformation
       }
     ]
   }
