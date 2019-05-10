@@ -1,13 +1,15 @@
 import React, { PureComponent } from "react";
 import { Icon } from "antd";
 import pic from "../../theme/pic.jpeg";
+import { compose } from "redux";
+import { withRouter } from "react-router-dom";
 
 type Props = {
   portfolio: Array,
   height: Number
 };
 
-export default class CardCoungre extends PureComponent<State, Props> {
+class CardCoungre extends PureComponent<State, Props> {
   state = { height: 0 };
 
   componentDidMount() {
@@ -82,3 +84,5 @@ export default class CardCoungre extends PureComponent<State, Props> {
     );
   }
 }
+
+export default compose(withRouter)(CardCoungre);
