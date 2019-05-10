@@ -1,7 +1,5 @@
-import Home from "./Home/Home";
-import AppThumbnailSlider from "./ThumbnailSlider/ThumbnailSlider";
-import ClipPath from "./ClipPath/ClipPath";
-import CartImage from "./CartImage/CartImage";
-import ChatBots from "./ChatBot/ChatBots";
+// import Medical from "./MedicalEvent/Medical";
+import BaseRoute from "./BaseRoute/BaseRoute";
+import News from "./MedicalEvent/News/News";
 
-export { Home, AppThumbnailSlider, ClipPath, CartImage, ChatBots };
+export { BaseRoute, News };
