@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { createBrowserHistory } from "history";
+import { AppContainer } from "react-hot-loader";
 import { Provider } from "react-redux";
 import { ConnectedRouter } from "connected-react-router";
 import { BrowserRouter } from "react-router-dom";
@@ -16,11 +17,13 @@ const initialState = window.__INITIAL_STATE__;
 const store = configureStore(history, initialState);
 
 ReactDOM.render(
-  <Provider store={store}>
-    <ConnectedRouter history={history}>
-      <BrowserRouter>{renderRoutes(Router)}</BrowserRouter>
-    </ConnectedRouter>
-  </Provider>,
+  <AppContainer>
+    <Provider store={store}>
+      <ConnectedRouter history={history}>
+        <BrowserRouter>{renderRoutes(Router)}</BrowserRouter>
+      </ConnectedRouter>
+    </Provider>
+  </AppContainer>,
   document.getElementById("root")
 );
 
