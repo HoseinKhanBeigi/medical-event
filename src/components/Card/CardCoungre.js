@@ -23,37 +23,59 @@ export default class CardCoungre extends PureComponent<State, Props> {
     var res = value.substring(0, 120);
 
     return (
-      <div>
+      <div style={{}}>
         <div
           style={{
-            display: "flex",
-            flexDirection: "row-reverse",
-            margin: "20px"
+            boxShadow: `rgb(247, 247, 247) 0px 0px 4px 3px`
           }}
         >
-          <div style={{ marginRight: "12px" }}>
+          <div
+            style={{
+              fontSize: "12px",
+              fontWeight: "bold",
+              direction: "rtl",
+              margin: "12px"
+            }}
+            className="card-title"
+          >
+            فلات قار تغییرات پیشین در سطح دریا فلات قاره
+          </div>
+          <div>
             <div
               style={{
-                lineHeight: "30px",
-                fontSize: "12px",
-                fontWeight: "bold",
-                direction: "rtl"
-              }}
-              className="card-title"
-            >
-              فلات قار تغییرات پیشین در سطح دریا فلات قاره
-            </div>
-            <div
-              style={{
-                textAlign: "justify",
-                lineHeight: "24px",
                 direction: "rtl",
-                fontSize: "10px"
+                marginRight: "16px"
               }}
-              className="card-content"
             >
-              {value.length > 120 ? `${res}...` : value}
+              محل برگزار:<span>asdas</span>
             </div>
+            <div
+              style={{
+                direction: "rtl",
+                marginRight: "16px"
+              }}
+            >
+              محل برگزار:<span>asdas</span>
+            </div>
+            <div
+              style={{
+                direction: "rtl",
+                marginRight: "16px"
+              }}
+            >
+              محل برگزار:<span>asdas</span>
+            </div>
+            <div
+              style={{
+                direction: "rtl",
+                marginRight: "16px",
+                marginTop: "12px"
+              }}
+            >
+              {" "}
+              کنکره فعلی
+            </div>
+            <div style={{ height: "12px" }} />
           </div>
         </div>
       </div>

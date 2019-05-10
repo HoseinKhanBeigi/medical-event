@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import { Icon } from "antd";
-import { compose } from 'redux';
-import { withRouter } from 'react-router-dom';
+import { compose } from "redux";
+import { withRouter } from "react-router-dom";
 import CardCoungre from "../../Card/CardCoungre";
 
 import pic from "../../../theme/pic.jpeg";
@@ -43,6 +43,7 @@ class Congress extends PureComponent<State, Props> {
     };
     return (
       <div style={{ height: "1400px" }}>
+        <div style={{ marginTop: "60px" }} />
         <CardCoungre />
         <CardCoungre />
         <CardCoungre />
