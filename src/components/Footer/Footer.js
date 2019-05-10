@@ -1,5 +1,6 @@
 import React, { PureComponent } from "react";
 import { Icon } from "antd";
+import { Link } from "react-router-dom";
 
 type Props = {
   portfolio: Array,
@@ -54,24 +55,51 @@ export default class Footer extends PureComponent<State, Props> {
         className="navbar"
       >
         <button className="font-name" style={styleButton}>
-          <div style={{ fontSize: "20px" }}>
-            <Icon type="smile" />
-          </div>
-          <div style={{ fontSize: "11px", marginTop: "-4px" }}>پروفایل</div>
+          <Link
+            to="/profile"
+            style={{
+              outline: "none",
+              textDecoration: "none",
+              color: "#525252"
+            }}
+          >
+            <div style={{ fontSize: "20px" }}>
+              <Icon type="smile" />
+            </div>
+            <div style={{ fontSize: "11px", marginTop: "-4px" }}>پروفایل</div>
+          </Link>
         </button>
         <button className="font-name" style={styleButton}>
-          <div style={{ fontSize: "20px" }}>
-            <Icon type="smile" />
-          </div>
-          <div style={{ fontSize: "11px", marginTop: "-4px" }}>
-            اخبارواطلاعیه
-          </div>
+          <Link
+            to="/news"
+            style={{
+              outline: "none",
+              textDecoration: "none",
+              color: "#525252"
+            }}
+          >
+            <div style={{ fontSize: "20px" }}>
+              <Icon type="smile" />
+            </div>
+            <div style={{ fontSize: "11px", marginTop: "-4px" }}>
+              اخبارواطلاعیه
+            </div>
+          </Link>
         </button>
         <button className="font-name" style={styleButton}>
-          <div style={{ fontSize: "20px" }}>
-            <Icon type="smile" />
-          </div>
-          <div style={{ fontSize: "11px", marginTop: "-4px" }}>کنگره</div>
+          <Link
+            to="/congress"
+            style={{
+              outline: "none",
+              textDecoration: "none",
+              color: "#525252"
+            }}
+          >
+            <div style={{ fontSize: "20px" }}>
+              <Icon type="smile" />
+            </div>
+            <div style={{ fontSize: "11px", marginTop: "-4px" }}>کنگره</div>
+          </Link>
         </button>
       </div>
     );

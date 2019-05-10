@@ -1,5 +1,7 @@
 import React, { PureComponent } from "react";
 import { Icon } from "antd";
+import { compose } from 'redux';
+import { withRouter } from 'react-router-dom';
 import CardNews from "../../Card/CardNews";
 import pic from "../../../theme/pic.jpeg";
 
@@ -8,7 +10,7 @@ type Props = {
   height: Number
 };
 
-export default class News extends PureComponent<State, Props> {
+class News extends PureComponent<State, Props> {
   state = { height: 0 };
 
   componentDidMount() {
@@ -53,3 +55,4 @@ export default class News extends PureComponent<State, Props> {
     );
   }
 }
+export default compose(withRouter)(News);

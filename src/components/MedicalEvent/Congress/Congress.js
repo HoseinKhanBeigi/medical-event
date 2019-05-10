@@ -1,6 +1,9 @@
 import React, { PureComponent } from "react";
 import { Icon } from "antd";
-import CardNews from "../../Card/CardNews";
+import { compose } from 'redux';
+import { withRouter } from 'react-router-dom';
+import CardCoungre from "../../Card/CardCoungre";
+
 import pic from "../../../theme/pic.jpeg";
 
 type Props = {
@@ -8,7 +11,7 @@ type Props = {
   height: Number
 };
 
-export default class Congress extends PureComponent<State, Props> {
+class Congress extends PureComponent<State, Props> {
   state = { height: 0 };
 
   componentDidMount() {
@@ -40,16 +43,15 @@ export default class Congress extends PureComponent<State, Props> {
     };
     return (
       <div style={{ height: "1400px" }}>
-        <div style={{ marginTop: "50px" }}>
-          <img src={pic} style={{ width: "100%" }} />
-        </div>
-        <CardNews />
-        <CardNews />
-        <CardNews />
-        <CardNews />
-        <CardNews />
-        <CardNews />
+        <CardCoungre />
+        <CardCoungre />
+        <CardCoungre />
+        <CardCoungre />
+        <CardCoungre />
+        <CardCoungre />
       </div>
     );
   }
 }
+
+export default compose(withRouter)(Congress);

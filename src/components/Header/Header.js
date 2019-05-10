@@ -1,12 +1,15 @@
 import React, { PureComponent } from "react";
 import { Icon } from "antd";
+import { compose } from "redux";
+import { withRouter } from "react-router-dom";
 
 type Props = {
   portfolio: Array,
-  height: Number
+  height: Number,
+  history: Object
 };
 
-export default class Header extends PureComponent<State, Props> {
+class Header extends PureComponent<State, Props> {
   state = { height: 0 };
 
   componentDidMount() {
@@ -71,9 +74,12 @@ export default class Header extends PureComponent<State, Props> {
           }}
           className="font-name"
         >
-          اخبار و اطلاعیه
+          {this.props.history.location.pathname === "/news"
+            ? "اخبار و اطلاعیه"
+            : "کنگره"}
         </div>
       </div>
     );
   }
 }
+export default compose(withRouter)(Header);
