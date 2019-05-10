@@ -6,7 +6,8 @@ import { withRouter } from "react-router-dom";
 
 type Props = {
   portfolio: Array,
-  height: Number
+  height: Number,
+  match: Object
 };
 
 class CardCoungre extends PureComponent<State, Props> {
@@ -17,6 +18,11 @@ class CardCoungre extends PureComponent<State, Props> {
       const heightResize = window.innerHeight;
     });
   }
+
+  handleClick = () => {
+    const { history } = this.props;
+    history.push(`/congress/${12}`);
+  };
 
   render() {
     const value =
@@ -30,6 +36,7 @@ class CardCoungre extends PureComponent<State, Props> {
           style={{
             boxShadow: `rgb(247, 247, 247) 0px 0px 4px 3px`
           }}
+          onClick={() => this.handleClick()}
         >
           <div
             style={{

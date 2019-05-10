@@ -6,7 +6,8 @@ import { withRouter } from "react-router-dom";
 type Props = {
   portfolio: Array,
   height: Number,
-  history: Object
+  history: Object,
+  match: Object
 };
 
 class Header extends PureComponent<State, Props> {

@@ -28,7 +28,6 @@ export default class Footer extends PureComponent<State, Props> {
   }
 
   render() {
-    console.log(this.state.height);
     const styleButton = {
       backgroundColor: "rgb(255, 255, 255)",
       border: "none",

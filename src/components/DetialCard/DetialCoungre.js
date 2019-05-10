@@ -6,7 +6,8 @@ import { withRouter } from "react-router-dom";
 
 type Props = {
   portfolio: Array,
-  height: Number
+  height: Number,
+  history: Object
 };
 
 class DetialCoungre extends PureComponent<State, Props> {
@@ -18,14 +19,20 @@ class DetialCoungre extends PureComponent<State, Props> {
     });
   }
 
+  handleClick = () => {
+    const { history } = this.props;
+    history.push(`/${12}/summery`);
+  };
+
   render() {
+    // console.log(this.props.match);
     const value =
       "با توجه به شرایط فعلی رانش قاره‌ای، نیم‌کره شمالی اکنون به طور با توجه به شرایط فعلی رانش قاره‌ای، نیم‌کره شمالی اکنون به طور با توجه به شرایط فعلی رانش قاره‌ای، نیم‌کره شمالی اکنون به طور با توجه به شرایط فعلی رانش قاره‌ای، نیم‌کره شمالی اکنون به طور با توجه به شرایط فعلی رانش قاره‌ای، نیم‌کره شمالی اکنون به طور";
 
     var res = value.substring(0, 120);
 
     return (
-      <div style={{ marginTop: "50px" }}>
+      <div style={{ marginTop: "3px" }}>
         <img src={pic} style={{ width: "100%" }} />
         <div style={{ display: "flex" }}>
           <div
@@ -40,13 +47,7 @@ class DetialCoungre extends PureComponent<State, Props> {
               alignItems: "center"
             }}
           >
-            <button
-              onClick={() => {
-                console.log("hiiii");
-              }}
-            >
-              {"ایاب و ذهاب"}
-            </button>
+            <button onClick={() => this.handleClick()}>{"ایاب و ذهاب"}</button>
 
             <Icon type="smile" style={{ marginRight: "12px" }} />
           </div>
