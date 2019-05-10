@@ -1,4 +1,4 @@
-import { BaseRoute, News } from "./components";
+import { BaseRoute, News, Congress } from "./components";
 
 export default [
   {
@@ -21,8 +21,8 @@ export default [
       },
       {
         path: "/congress",
-        exact: true
-        // component: Medical
+        exact: true,
+        component: Congress
       }
     ]
   }
