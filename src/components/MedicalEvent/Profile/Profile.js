@@ -12,7 +12,7 @@ type Props = {
 };
 
 class Profile extends PureComponent<State, Props> {
-  state = { height: 0, anim_right: undefined };
+  state = { height: 0, anim_right: "right" };
 
   componentDidMount() {}
 
