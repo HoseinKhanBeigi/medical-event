@@ -6,26 +6,26 @@ import { withRouter } from "react-router-dom";
 type Props = {
   portfolio: Array,
   height: Number,
-  history: Object
+  history: Object,
+  match: Object
 };
 
 class Header extends PureComponent<State, Props> {
   state = { height: 0 };
 
   componentDidMount() {
-    const heightWindow = window.innerHeight;
-    const navbar = document.querySelector(".navbar").getBoundingClientRect()
-      .height;
-    this.setState({
-      height: heightWindow - navbar
-    });
-
-    window.addEventListener("resize", () => {
-      const heightResize = window.innerHeight;
-      this.setState({
-        height: heightResize - navbar
-      });
-    });
+    // const heightWindow = window.innerHeight;
+    // const navbar = document.querySelector(".navbar").getBoundingClientRect()
+    //   .height;
+    // this.setState({
+    //   height: heightWindow - navbar
+    // });
+    // window.addEventListener("resize", () => {
+    //   const heightResize = window.innerHeight;
+    //   this.setState({
+    //     height: heightResize - navbar
+    //   });
+    // });
   }
 
   render() {

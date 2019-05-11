@@ -1,4 +1,11 @@
-import { BaseRoute, News, Congress } from "./components";
+import {
+  BaseRoute,
+  News,
+  Congress,
+  DetialCoungre,
+  SummenryImformation,
+  Profile
+} from "./components";
 
 export default [
   {
@@ -16,13 +23,29 @@ export default [
       },
       {
         path: "/profile",
-        exact: true
-        // component: Medical
+        exact: true,
+        component: Profile
       },
       {
         path: "/congress",
         exact: true,
         component: Congress
+      },
+      {
+        path: "/congress/:id",
+        exact: true,
+        component: DetialCoungre,
+        isExact: true
+      },
+      {
+        path: "/congress/:id/summery",
+        exact: true,
+        component: SummenryImformation
+      },
+      {
+        path: "/congress/:id/map",
+        exact: true,
+        component: SummenryImformation
       }
     ]
   }

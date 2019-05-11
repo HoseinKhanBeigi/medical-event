@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import { Icon } from "antd";
-import { compose } from 'redux';
-import { withRouter } from 'react-router-dom';
+import { compose } from "redux";
+import { withRouter } from "react-router-dom";
 import CardNews from "../../Card/CardNews";
 import pic from "../../../theme/pic.jpeg";
 
@@ -14,19 +14,18 @@ class News extends PureComponent<State, Props> {
   state = { height: 0 };
 
   componentDidMount() {
-    const heightWindow = window.innerHeight;
-    const navbar = document.querySelector(".navbar").getBoundingClientRect()
-      .height;
-    this.setState({
-      height: heightWindow - navbar
-    });
-
-    window.addEventListener("resize", () => {
-      const heightResize = window.innerHeight;
-      this.setState({
-        height: heightResize - navbar
-      });
-    });
+    // const heightWindow = window.innerHeight;
+    // const navbar = document.querySelector(".navbar").getBoundingClientRect()
+    //   .height;
+    // this.setState({
+    //   height: heightWindow - navbar
+    // });
+    // window.addEventListener("resize", () => {
+    //   const heightResize = window.innerHeight;
+    //   this.setState({
+    //     height: heightResize - navbar
+    //   });
+    // });
   }
 
   render() {
