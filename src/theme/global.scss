@@ -19,3 +19,19 @@
 .card-content {
   font-family: Vazir;
 }
+
+.div-animation {
+  background: red;
+  width: 100px;
+  height: 17px;
+  position: absolute;
+}
+
+.animation {
+  transform: translateX(100px);
+  transition: 0.3s ease-in-out;
+  background: red;
+  width: 100px;
+  height: 17px;
+  position: absolute;
+}

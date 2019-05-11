@@ -12,9 +12,16 @@ type Props = {
 };
 
 class Profile extends PureComponent<State, Props> {
-  state = { height: 0 };
+  state = { height: 0, anim_right: undefined };
 
   componentDidMount() {}
+
+  handleAnimation = value => {
+    console.log(value);
+    this.setState({
+      anim_right: value
+    });
+  };
 
   render() {
     const styleButton = {
@@ -27,6 +34,12 @@ class Profile extends PureComponent<State, Props> {
       fontSize: "16px",
       cursor: "pointer"
     };
+    let val = 100;
+    if (this.state.anim_right === "left") {
+      val = 0;
+    } else if (this.state.anim_right === "right") {
+      val = 100;
+    }
     return (
       <div>
         <div
@@ -42,77 +55,98 @@ class Profile extends PureComponent<State, Props> {
           }}
           className="navbar"
         >
-          <button className="font-name" style={styleButton}>
+          <button
+            className="font-name"
+            style={styleButton}
+            onClick={() => this.handleAnimation("left")}
+          >
             <div style={{ fontSize: "11px", marginTop: "-4px" }}>پروفایل</div>
           </button>
-          <button className="font-name" style={styleButton}>
+          <button
+            onClick={() => this.handleAnimation("right")}
+            className="font-name"
+            style={styleButton}
+          >
             <div style={{ fontSize: "11px", marginTop: "-4px" }}>کنگره</div>
           </button>
         </div>
         <div
           style={{
-            direction: "rtl",
-            marginTop: "40px",
+            transform: `translateX(${val}%)`,
+            transition: `0.3s ease-in-out`,
+            background: `red`,
+            width: `50%`,
+            height: "2px",
             position: "absolute",
-            width: "100%"
+            marginTop: "36px"
           }}
-        >
+        />
+        {this.state.anim_right === "right" && (
           <div
             style={{
-              height: "57px",
-              borderBottom: "1px solid",
-              margin: "12px",
-              color: "#a2a2a2"
+              direction: "rtl",
+              marginTop: "40px",
+              position: "absolute",
+              width: "100%"
             }}
           >
-            {"Email"}
-            <div>{"hsoein@gmail.com"}</div>
+            <div
+              style={{
+                height: "57px",
+                borderBottom: "1px solid",
+                margin: "12px",
+                color: "#a2a2a2"
+              }}
+            >
+              {"Email"}
+              <div>{"hsoein@gmail.com"}</div>
+            </div>
+            <div
+              style={{
+                height: "57px",
+                borderBottom: "1px solid",
+                margin: "12px",
+                color: "#a2a2a2"
+              }}
+            >
+              {"Email"}
+              <div>{"hsoein@gmail.com"}</div>
+            </div>
+            <div
+              style={{
+                height: "57px",
+                borderBottom: "1px solid",
+                margin: "12px",
+                color: "#a2a2a2"
+              }}
+            >
+              {"Email"}
+              <div>{"hsoein@gmail.com"}</div>
+            </div>
+            <div
+              style={{
+                height: "57px",
+                borderBottom: "1px solid",
+                margin: "12px",
+                color: "#a2a2a2"
+              }}
+            >
+              {"Email"}
+              <div>{"hsoein@gmail.com"}</div>
+            </div>
+            <div
+              style={{
+                height: "57px",
+                borderBottom: "1px solid",
+                margin: "12px",
+                color: "#a2a2a2"
+              }}
+            >
+              {"Email"}
+              <div>{"hsoein@gmail.com"}</div>
+            </div>
           </div>
-          <div
-            style={{
-              height: "57px",
-              borderBottom: "1px solid",
-              margin: "12px",
-              color: "#a2a2a2"
-            }}
-          >
-            {"Email"}
-            <div>{"hsoein@gmail.com"}</div>
-          </div>
-          <div
-            style={{
-              height: "57px",
-              borderBottom: "1px solid",
-              margin: "12px",
-              color: "#a2a2a2"
-            }}
-          >
-            {"Email"}
-            <div>{"hsoein@gmail.com"}</div>
-          </div>
-          <div
-            style={{
-              height: "57px",
-              borderBottom: "1px solid",
-              margin: "12px",
-              color: "#a2a2a2"
-            }}
-          >
-            {"Email"}
-            <div>{"hsoein@gmail.com"}</div>
-          </div>
-          <div
-            style={{
-              height: "57px",
-              borderBottom: "1px solid",
-              margin: "12px",
-              color: "#a2a2a2"
-            }}
-          >
-            {"Email"}
-            <div>{"hsoein@gmail.com"}</div>
-          </div>
-        </div>
+        )}
       </div>
     );
   }
