@@ -1,3 +1,5 @@
 # yarn
 
-#yarn dev
+#yarn install
+
+#yarn start
