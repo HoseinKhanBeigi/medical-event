@@ -1,9 +1,9 @@
 import { combineReducers } from "redux";
 import { connectRouter } from "connected-react-router";
-import todos from "./todos";
+import Posts from "./Posts";
 
 const reducers = {
-  todos
+  Posts
 };
 
 export default history =>

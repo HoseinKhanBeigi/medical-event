@@ -2,43 +2,27 @@ import React, { PureComponent } from "react";
 import { Icon } from "antd";
 import { compose } from "redux";
 import { withRouter } from "react-router-dom";
+import { connect } from "react-redux";
 import CardNews from "../../Card/CardNews";
 import pic from "../../../theme/pic.jpeg";
+import { List } from "../../../redux/actions";
 
 type Props = {
   portfolio: Array,
-  height: Number
+  height: Number,
+  List: Function,
+  Posts: Array
 };
 
 class News extends PureComponent<State, Props> {
   state = { height: 0 };
 
   componentDidMount() {
-    // const heightWindow = window.innerHeight;
-    // const navbar = document.querySelector(".navbar").getBoundingClientRect()
-    //   .height;
-    // this.setState({
-    //   height: heightWindow - navbar
-    // });
-    // window.addEventListener("resize", () => {
-    //   const heightResize = window.innerHeight;
-    //   this.setState({
-    //     height: heightResize - navbar
-    //   });
-    // });
+    this.props.List();
   }
 
   render() {
-    const styleButton = {
-      backgroundColor: "rgb(255, 255, 255)",
-      border: "none",
-      color: "#6b428e",
-      textAlign: "center",
-      textDecoration: "none",
-      display: "inline-block",
-      fontSize: "16px",
-      cursor: "pointer"
-    };
+    console.log(this.props.Posts);
     return (
       <div style={{ height: "1400px" }}>
         <div style={{ marginTop: "50px" }}>
@@ -54,4 +38,17 @@ class News extends PureComponent<State, Props> {
     );
   }
 }
-export default compose(withRouter)(News);
+
+const mapStateToProps = ({ Posts }) => ({ Posts });
+
+const mapDispatchToProps = dispatch => ({
+  List: () => dispatch(List())
+});
+
+export default compose(
+  withRouter,
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )
+)(News);

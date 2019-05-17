@@ -25,7 +25,6 @@ class HeaderCoungre extends PureComponent<State, Props> {
   };
 
   render() {
-    console.log(this.props.history.location.pathname === "/congress/12");
     const styleButton = {
       backgroundColor: "rgb(255, 255, 255)",
       border: "none",

@@ -31,6 +31,7 @@ class Congress extends PureComponent<State, Props> {
   }
 
   render() {
+    console.log("ho");
     const styleButton = {
       backgroundColor: "rgb(255, 255, 255)",
       border: "none",
