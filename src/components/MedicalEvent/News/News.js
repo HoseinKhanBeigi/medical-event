@@ -19,7 +19,6 @@ class News extends PureComponent<State, Props> {
   state = { height: 0 };
 
   componentDidMount() {
-    // this.props.List();
     this.props.List2();
   }
 

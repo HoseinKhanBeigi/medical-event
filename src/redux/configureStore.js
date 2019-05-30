@@ -10,26 +10,27 @@ axios.defaults.baseURL = "https://jsonplaceholder.typicode.com";
 export default (history: Object, initialState: Object = {}) => {
   const vanillaPromise = ({ dispatch }) => next => action => {
     const TYPE = next(action).type;
-    const promis = async () => {
-      try {
-        const result = axios({
-          method: next(action).method,
-          url: next(action).url,
-          data: next(action).data || {}
+    if (next(action).method) {
+      const promis = new Promise((resolve, reject) => {
+        resolve(
+          axios({
+            method: next(action).method,
+            url: next(action).url,
+            data: next(action).data || {}
+          })
+        );
+      });
+      promis
+        .then(res => {
+          dispatch({ type: `${TYPE}_REQUESTING` });
+          const { data } = res;
+          dispatch({ type: `${TYPE}_SUCCESS`, data });
+        })
+        .catch(err => {
+          dispatch({ type: `${TYPE}_FAILURE`, err: err });
         });
-
-        const { data } = await result;
-        dispatch({ type: `${TYPE}_REQUESTING` });
-        dispatch({ type: `${TYPE}_SUCCESS`, data });
-
-        result.catch(err => {
-          dispatch({ type: `${TYPE}_FAILURE`, err: err.message });
-        });
-      } catch (err) {
-        //
-      }
-    };
-    return promis();
+      return promis;
+    }
   };
 
   const middlewares = [routerMiddleware(history), thunk, vanillaPromise];
@@ -44,8 +45,6 @@ export default (history: Object, initialState: Object = {}) => {
     initialState,
     enhancers
   );
-
-  // console.log(store.dispatch, "action");
 
   return store;
 };
