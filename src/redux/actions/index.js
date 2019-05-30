@@ -1,3 +1,3 @@
-import { List } from "./Posts";
+import { List2 } from "./Posts";
 
-export { List };
+export { List2 };

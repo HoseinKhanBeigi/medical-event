@@ -5,23 +5,31 @@ import axios from "axios";
 
 import createRootReducer from "./reducers";
 
-const API_URL = "https://jsonplaceholder.typicode.com/users";
-
-// Export this for unit testing more easily
-/* istanbul ignore next */
+axios.defaults.baseURL = "https://jsonplaceholder.typicode.com";
 
 export default (history: Object, initialState: Object = {}) => {
-  const vanillaPromise = store => next => action => {
-    const fetchUsers = (URL = API_URL) => async (dispatch: Dispatch) => {
-      dispatch({ type: "USERS_REQUESTING" });
-
+  const vanillaPromise = ({ dispatch }) => next => action => {
+    const TYPE = next(action).type;
+    const promis = async () => {
       try {
-        const { data } = await axios.get(URL);
-        dispatch({ type: "USERS_SUCCESS", data });
+        const result = axios({
+          method: next(action).method,
+          url: next(action).url,
+          data: next(action).data || {}
+        });
+
+        const { data } = await result;
+        dispatch({ type: `${TYPE}_REQUESTING` });
+        dispatch({ type: `${TYPE}_SUCCESS`, data });
+
+        result.catch(err => {
+          dispatch({ type: `${TYPE}_FAILURE`, err: err.message });
+        });
       } catch (err) {
-        dispatch({ type: "USERS_FAILURE", err: err.message });
+        //
       }
     };
+    return promis();
   };
 
   const middlewares = [routerMiddleware(history), thunk, vanillaPromise];
@@ -37,7 +45,7 @@ export default (history: Object, initialState: Object = {}) => {
     enhancers
   );
 
-  console.log(store.dispatch, "action");
+  // console.log(store.dispatch, "action");
 
   return store;
 };
